@@ -18,7 +18,7 @@ var KEYCODE = {
 
 // Module4-task1
 var userDialog = document.querySelector('.setup');
-var userDialogOpen = document.querySelector('.setup-open');   // кнопка открытия окна
+var userDialogOpen = document.querySelector('.setup-open'); // кнопка открытия окна
 var userDialogClose = userDialog.querySelector('.setup-close'); // кнопка закрытия окна
 
 var userInputName = userDialog.querySelector('.setup-user-name');
@@ -68,7 +68,7 @@ userInputName.addEventListener('invalid', function (evt) {
   } else if (userInputName.validity.tooLong) {
     message = 'Имя не должно превышать 25-ти символов';
   } else if (userInputName.validity.valueMissing) {
-    message = 'Введите имя персонажа';   
+    message = 'Введите имя персонажа';
   } else {
     message = '';
   }
@@ -80,6 +80,7 @@ userInputName.addEventListener('input', function (evt) {
   var message;
   var target = evt.target;
 
+  // eslint-disable-next-line no-unused-expressions
   target.value.length < 2 ? message = 'Имя должно состоять минимум из 2-х символов' : message = '';
   target.setCustomValidity(message);
 });
